@@ -1,16 +1,20 @@
 "use client";
 
-import { signIn } from "next-auth/react";
+import { authClient } from "@/auth-client";
+
  
 export default function SignIn() {
   return (
     <form
       onSubmit={async (event) => {
         event.preventDefault();
-        await signIn("spotify");
+       await authClient.signIn.social({provider: "spotify"})
       }}
     >
-      <button type="submit">Sign in with Spotify</button>
+      <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-lg
+               transition-transform duration-200 ease-in-out
+               hover:scale-105
+               active:scale-95 hover:shadow-lg transition-all">Sign in with Spotify</button>
     </form>
   )
 }

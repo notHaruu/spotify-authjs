@@ -1,11 +1,22 @@
-import type { NextAuthOptions } from "next-auth";
-import SpotifyProvider from "next-auth/providers/spotify";
+import { betterAuth } from "better-auth";
 
-export const authOptions: NextAuthOptions = {
-  providers: [
-    SpotifyProvider({
-      clientId: process.env.SPOTIFY_CLIENT_ID ?? "",
-      clientSecret: process.env.SPOTIFY_CLIENT_SECRET ?? "",
-    }),
-  ],
-};
+export const auth = betterAuth({
+  socialProviders: { 
+    spotify: { 
+      clientId: process.env.SPOTIFY_CLIENT_ID as string, 
+      clientSecret: process.env.SPOTIFY_CLIENT_SECRET as string,
+      scope: [
+        "user-read-email",
+        "user-read-private",
+        "user-top-read",
+        "user-library-read",
+        "user-library-modify",
+        "playlist-read-private",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "user-read-playback-state",
+        "user-modify-playback-state",
+      ]
+    }
+  }
+})

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -28,7 +32,6 @@ body {
 
 button {
   background-color: hsl(120, 98%, 35%);
-  padding: 15px;
   border-radius: 25px;
   font-size: 25px;
 }

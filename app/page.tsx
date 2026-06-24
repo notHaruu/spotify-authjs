@@ -1,10 +1,9 @@
-import { auth } from "@/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 import SignIn from "@/components/sign-in";
 
-console.log(auth)
-
 export default async function HomePage() {
-  const session = await auth()
+  const session = await getServerSession(authOptions)
   return (
     <div>
       <h1>Homepage</h1>
@@ -14,5 +13,3 @@ export default async function HomePage() {
     </div>
   )
 }
-
-console.log(auth)

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,12 +30,7 @@ body {
   font-family: Inter;
   padding: 25px;
 }
-
-button {
-  background-color: hsl(120, 98%, 35%);
-  border-radius: 25px;
-  font-size: 25px;
-}
+  
 
 h1 {
   font-size: 100px;

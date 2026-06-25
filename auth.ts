@@ -10,12 +10,8 @@ export const auth = betterAuth({
         "user-read-private",
         "user-top-read",
         "user-library-read",
-        "user-library-modify",
         "playlist-read-private",
-        "playlist-modify-private",
-        "playlist-modify-public",
         "user-read-playback-state",
-        "user-modify-playback-state",
       ]
     }
   }
